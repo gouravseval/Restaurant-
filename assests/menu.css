@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: powderblue;
+    scroll-behavior: smooth;
+    position: relative;
+    background-color: #161516fa;
+
+}
+
+
+.wide-menu {
+    display: flex;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Book */
+.book {
+    position: relative;
+    width: 37vw;
+    height: 90vh;
+    transition: transform 0.5s;
+}
+
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+
+}
+
+.front,
+.back {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid #d5b687;
+}
+
+.back {
+    z-index: 0;
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(135deg, #151419, #17171c, #1e1f23, #212226, #201f24);
+}
+
+.back-content {
+    transform: rotateY(180deg)
+}
+
+/* Paper flip effect */
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+
+/* Controller Buttons */
+button {
+    margin: 9vw;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+
+button:focus {
+    outline: none;
+}
+
+button:hover i {
+    color: #636363;
+}
+
+i {
+    font-size: 50px;
+    color: gray;
+}
+
+/* Paper stack order */
+#p1 {
+    z-index: 3;
+}
+
+#p2 {
+    z-index: 2;
+}
+
+#p3 {
+    z-index: 1;
+}
+
+#f1 {
+    background-image: url("menu-design.png");
+    background-size: cover;
+
+}
+
+#f1 img {
+    height: 1.7vw;
+    align-self: start;
+    margin-top: 3vw;
+    margin-left: 1vw;
+}
+
+#f1 h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 0.5vw;
+    margin: 10vh 0 0 23vw;
+    font-size: calc(1rem + 1.9vw);
+    color: #000000;
+    text-shadow: 0px 0px 2px #d5b687;
+}
+
+
+#b1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.menu-hero {
+    height: 94vw;
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+
+.menu-hero div {
+    padding-top: 0.5vw;
+    text-align: top;
+    border: 1.2px solid grey;
+    width: 94%;
+    border-radius: 1rem;
+    margin-top: 0.5vw;
+    height: 17%;
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    background-position: calc();
+}
+
+.book h1 {
+    margin-top: 1vw;
+    color: white;
+}
+
+.menu-hero1 div {
+    background-image: url("hero-slider-1.jpg");
+    color: rgb(253, 253, 253);
+    font-weight: 700;
+    font-size: 1.5vw;
+}
+
+.menu-hero2 div {
+    background-image: url("shahipanner.jpg");
+    color: #201f24;
+    font-weight: 700;
+    font-size: 1.5vw;
+}
+
+.menu-hero3 div {
+    background-image: url("roti.jpg");
+    color: rgb(246, 246, 246);
+    font-weight: 700;
+    font-size: 1.5vw;
+}
+
+.menu-hero4 div {
+    background-image: url("pineapple.jpg");
+    color: black;
+    font-weight: 700;
+    font-size: 1.5vw;
+    background-position: 60%;
+}
+
+.menu-hero5 div {
+    background-image: url("rasmali.jpg");
+    color: black;
+    font-weight: 700;
+    font-size: 1.5vw;
+}
+
+
+
+@media(max-width: 620px) {
+
+    body,html{
+        height: auto;
+    }
+
+    button{
+        display: none;
+    }
+
+    .paper{
+        display: none;
+    }
+
+    .book{
+        height: auto;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .mpage{
+        height: 80vh;
+        width: 90vw;
+        border: 1px solid #d5b687;
+        margin-bottom: 50px;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .mpage div{
+        height: 18%;
+        width: 90%;
+        border: 1px solid #d5b687;
+        margin: 5px 0;
+        border-radius: 0.8rem;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: cadetblue;
+    }
+
+    .mpage1 div{
+        background-image: url("appetizer.jpg");
+    }
+
+    .mpage2 div{
+        background-image: url("main-course.jpg");
+    }
+    .mpage3 div{
+        background-image: url("roti.jpg");
+    }
+    .mpage4 div{
+        background-image: url("drinks.jpg");
+    }
+    .mpage5 div{
+        background-image: url("sweets.jpg");
+    }
+
+
+}
+
